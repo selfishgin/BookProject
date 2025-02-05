@@ -1,0 +1,31 @@
+﻿@model BookProject.Models.User
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2>Edit User</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.UserId)
+
+    <div class="form-group">
+        <label>First Name</label>
+        @Html.TextBoxFor(m => m.UserFirstname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        @Html.TextBoxFor(m => m.UserLastname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        @Html.TextBoxFor(m => m.UserAge, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Speciality</label>
+        @Html.TextBoxFor(m => m.UserSpeciality, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+}

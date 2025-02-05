@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BookProject.Models.Book>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Books</h2>
+<p><a href="@Url.Action("Create")" class="btn btn-success">Add New Book</a></p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Pages</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookName</td>
+                <td>@book.BookAuthor</td>
+                <td>@book.BookGenre</td>
+                <td>@book.BookPages</td>
+                <td>$@book.BookPrice</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = book.BookId })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { id = book.BookId })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = book.BookId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

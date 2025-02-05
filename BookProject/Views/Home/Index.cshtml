@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Welcome to BookProject</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Books</h3>
+            <p>Explore books in our library.</p>
+            <a href="@Url.Action("Index", "Books")" class="btn btn-primary">View Books</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Courses</h3>
+            <p>Enroll in online courses.</p>
+            <a href="@Url.Action("Index", "Courses")" class="btn btn-primary">View Courses</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Users</h3>
+            <p>Manage registered users.</p>
+            <a href="@Url.Action("Index", "Users")" class="btn btn-primary">View Users</a>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="@Url.Action("Index", "Cart")" class="btn btn-warning">Go to Cart</a>
+    <a href="@Url.Action("Index", "Payment")" class="btn btn-success">Proceed to Payment</a>
+</div>

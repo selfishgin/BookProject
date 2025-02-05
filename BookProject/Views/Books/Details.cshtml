@@ -1,0 +1,37 @@
+﻿@model BookProject.Models.Book
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>Book Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Book Name:</th>
+        <td>@Model.BookName</td>
+    </tr>
+    <tr>
+        <th>Author:</th>
+        <td>@Model.BookAuthor</td>
+    </tr>
+    <tr>
+        <th>Genre:</th>
+        <td>@Model.BookGenre</td>
+    </tr>
+    <tr>
+        <th>Description:</th>
+        <td>@Model.BookDesc</td>
+    </tr>
+    <tr>
+        <th>Pages:</th>
+        <td>@Model.BookPages</td>
+    </tr>
+    <tr>
+        <th>Price:</th>
+        <td>$@Model.BookPrice</td>
+    </tr>
+</table>
+
+<a href="@Url.Action("Edit", new { id = Model.BookId })" class="btn btn-warning">Edit</a>
+<a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>

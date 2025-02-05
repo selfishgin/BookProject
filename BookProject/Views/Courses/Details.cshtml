@@ -1,0 +1,33 @@
+﻿@model BookProject.Models.Course
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+<h2>Course Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Course Name:</th>
+        <td>@Model.CourseName</td>
+    </tr>
+    <tr>
+        <th>Mentor:</th>
+        <td>@Model.CourseMentor</td>
+    </tr>
+    <tr>
+        <th>Required Skills:</th>
+        <td>@Model.CourseReqSkill</td>
+    </tr>
+    <tr>
+        <th>Duration (Hours):</th>
+        <td>@Model.CourseDuration</td>
+    </tr>
+    <tr>
+        <th>Price:</th>
+        <td>$@Model.CoursePrice</td>
+    </tr>
+</table>
+
+<a href="@Url.Action("Edit", new { id = Model.CourseId })" class="btn btn-warning">Edit</a>
+<a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>

@@ -1,0 +1,15 @@
+﻿@model BookProject.Models.Course
+
+@{
+    ViewBag.Title = "Delete Course";
+}
+
+<h2>Delete Course</h2>
+<p>Are you sure you want to delete <strong>@Model.CourseName</strong> by @Model.CourseMentor?</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+}
